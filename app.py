@@ -1,7 +1,15 @@
 from flask import *
-import subprocess, os
+import subprocess
+import os
+import platform
 
 app = Flask(__name__)
+
+HUFFMAN_EXECUTABLE = (
+    "huffman.exe"
+    if platform.system() == "Windows"
+    else "./huffman"
+)
 
 UPLOAD = "uploads"
 OUTPUT = "output"
@@ -27,7 +35,7 @@ def compress():
 
     # WINDOWS FIX (use .exe)
     subprocess.run([
-        "huffman.exe",
+        HUFFMAN_EXECUTABLE,
         "compress",
         in_path,
         out_path
@@ -47,11 +55,11 @@ def decompress():
     file.save(in_path)
 
     subprocess.run([
-        "huffman.exe",
-        "decompress",
-        in_path,
-        out_path
-    ], check=True)
+    HUFFMAN_EXECUTABLE,
+    "decompress",
+    in_path,
+    out_path
+], check=True)
 
     return send_file(out_path, as_attachment=True)
 
