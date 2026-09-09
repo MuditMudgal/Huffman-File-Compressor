@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6f8;
+    color: #222;
+}
+
+.container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+/* Heading */
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 45px;
+}
+
+/* Cards */
+
+.cards {
+    display: flex;
+    gap: 25px;
+}
+
+.card {
+    flex: 1;
+
+    background: white;
+
+    padding: 30px;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.card p {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* File input */
+
+input[type="file"] {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+/* Button */
+
+button {
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #333;
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* Info */
+
+.info {
+    text-align: center;
+    margin-top: 35px;
+
+    color: #888;
+    font-size: 14px;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .container {
+        margin: 40px auto;
+    }
+}
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #888;
+    font-size: 14px;
+}
